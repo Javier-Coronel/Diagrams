@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameDataModification : MonoBehaviour
 {
+    public static GameDataModification Instance;
     public string[,] dioaramas = new string[8, 8]
     {
         {"A1","B1","C1","D1","E1","F1","G1","H1"},
@@ -19,14 +20,25 @@ public class GameDataModification : MonoBehaviour
     public float timeToNextCicle = 30;
     private float timerToCicle = 0;
     public int internalZoneCicleRotation = 2, midleZoneCicleRotation = 4, externalZoneCicleRotation = 6;
-    public int[] 
-    internalZonePositionsX={2,2,2,2,3,3,4,4,5,5,5,5},
-    internalZonePositionsY={2,3,4,5,2,5,2,5,2,3,4,5},
-    midleZonePositionsX={1,1,1,1,1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,6},
-    midleZonePositionsY={1,2,3,4,5,6,1,6,1,6,1,6,1,6,1,2,3,4,5,6},
-    externalZonePositionsX={0,0,0,0,0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,7,7,7,7,7,7},
-    externalZonePositionsY={0,1,2,3,4,5,6,7,0,7,0,7,0,7,0,7,0,7,0,7,0,1,2,3,4,5,6,7};
+    //Hay que cambiar esto a algo mas legible
+    private int[] 
+    internalZonePositionsX={2,2,2,2,3,4,5,5,5,5,4,3},
+    internalZonePositionsY={2,3,4,5,5,5,5,4,3,2,2,2},
+    midleZonePositionsX={1,1,1,1,1,1,2,3,4,5,6,6,6,6,6,6,5,4,3,2},
+    midleZonePositionsY={1,2,3,4,5,6,6,6,6,6,6,5,4,3,2,1,1,1,1,1},
+    externalZonePositionsX={0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1},
+    externalZonePositionsY={0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1,0,0,0,0,0,0,0};
 
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -41,15 +53,15 @@ public class GameDataModification : MonoBehaviour
         {
             ciclo++;
             timerToCicle = 0;
-            if (internalZoneCicleRotation % ciclo == 0)
+            if (ciclo % internalZoneCicleRotation == 0)
             {
                 RotateCicle(1,1);
             }
-            if (midleZoneCicleRotation % ciclo == 0)
+            if (ciclo % midleZoneCicleRotation == 0)
             {
                 RotateCicle(2,-1);
             }
-            if (externalZoneCicleRotation % ciclo == 0)
+            if (ciclo % externalZoneCicleRotation == 0)
             {
                 RotateCicle(3,1);
             }
@@ -58,28 +70,40 @@ public class GameDataModification : MonoBehaviour
     
     void RotateCicle(int zone, int orientation){
         if(zone==1){
-            for (int i = (orientation<0)?internalZonePositionsX.Length:1; (orientation<0)?(i>0):(i < internalZonePositionsX.Length); i++)
+            for (int i = (orientation<0)?internalZonePositionsX.Length-1:1; (orientation<0)?(i>0):(i < internalZonePositionsX.Length); i += (orientation < 0) ? -1 : 1)
             {
                 (dioaramas[internalZonePositionsX[i],internalZonePositionsY[i]],dioaramas[internalZonePositionsX[0],internalZonePositionsY[0]])=
                 (dioaramas[internalZonePositionsX[0],internalZonePositionsY[0]],dioaramas[internalZonePositionsX[i],internalZonePositionsY[i]]);
             }
-            DebugDioramas();
 
             
         }else if(zone==2){
-
-        }else if(zone==3){
-
+            for (int i = (orientation < 0) ? midleZonePositionsX.Length-1 : 1; (orientation < 0) ? (i > 0) : (i < midleZonePositionsX.Length); i+= (orientation < 0) ? -1:1)
+            {
+                //Debug.Log(dioaramas[midleZonePositionsX[i], midleZonePositionsY[i]] + " " + dioaramas[midleZonePositionsX[0], midleZonePositionsY[0]]+" "+ midleZonePositionsX[i]+" "+ midleZonePositionsY[i]);
+                (dioaramas[midleZonePositionsX[i], midleZonePositionsY[i]], dioaramas[midleZonePositionsX[0], midleZonePositionsY[0]]) =
+                (dioaramas[midleZonePositionsX[0], midleZonePositionsY[0]], dioaramas[midleZonePositionsX[i], midleZonePositionsY[i]]);
+            }
         }
+        else if(zone==3){
+            for (int i = (orientation < 0) ? externalZonePositionsX.Length-1 : 1; (orientation < 0) ? (i > 0) : (i < externalZonePositionsX.Length); i += (orientation < 0) ? -1 : 1)
+            {
+                (dioaramas[externalZonePositionsX[i], externalZonePositionsY[i]], dioaramas[externalZonePositionsX[0], externalZonePositionsY[0]]) =
+                (dioaramas[externalZonePositionsX[0], externalZonePositionsY[0]], dioaramas[externalZonePositionsX[i], externalZonePositionsY[i]]);
+            }
+        }
+        DebugDioramas();
     }
-    void DebugDioramas(){
+    void DebugDioramas()
+    {
+        string a = "";
         for (int i = 0; i < 8; i++)
         {
-            string a ="";
             for (int j = 0; j < 8;j++){
-                a+=dioaramas[i,j];
+                a+=dioaramas[i,j]+" ";
             }
-            Debug.Log(a.ToString());
+            a += "\n";
         }
+        Debug.Log(a.ToString());
     }
 }

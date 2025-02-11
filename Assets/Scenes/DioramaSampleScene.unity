@@ -241,6 +241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   placePosition: {fileID: 157786334}
+  esParaLatitud: 0
+  positiveDirection: 1
 --- !u!65 &636178423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -591,6 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   placePosition: {fileID: 1616080933}
+  esParaLatitud: 0
+  positiveDirection: 0
 --- !u!65 &1020399179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -742,6 +746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   placePosition: {fileID: 1354200822}
+  esParaLatitud: 1
+  positiveDirection: 1
 --- !u!65 &1398632945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -842,7 +848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee59539c60048f4d88470d2dc8b873b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dioram: 
+  dioram: DioramaSampleScene
+  updateToSceneName: 1
 --- !u!4 &1405717217
 Transform:
   m_ObjectHideFlags: 0
@@ -927,7 +934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A1
+  m_text: A8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1109,6 +1116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   placePosition: {fileID: 868797483}
+  esParaLatitud: 1
+  positiveDirection: 0
 --- !u!65 &1926112509
 BoxCollider:
   m_ObjectHideFlags: 0

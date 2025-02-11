@@ -4,5 +4,197 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A1.unity
+    guid: 3f6cbfb2629198947940a2e86a69dbe6
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A2.unity
+    guid: 2bb21959e718d3d4da378515cc7f35e7
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A3.unity
+    guid: 9dd672addc04743489db3cbafca252bf
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A4.unity
+    guid: 9cd59601e8f3ae04e974b718354c366e
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A5.unity
+    guid: 7d6cf944b6fcdb847b97d09609db5f87
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A6.unity
+    guid: 202bd119f6b95e54bab44b7e4df24fcb
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A7.unity
+    guid: 5c6cf0da4067d4f4cb4718eb64bef04c
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsA/A8.unity
+    guid: df76898f860408a45bc17f0e1af1494e
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B1.unity
+    guid: 4990d67f49135e749a54d763066b0a9b
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B2.unity
+    guid: 91a7bfd40034b2d44b8c678553f9ccb2
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B3.unity
+    guid: 5e0bd42e20213cd4dbd74feb631e7c0e
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B4.unity
+    guid: a050a567eca829147b0e78b72ad78e22
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B5.unity
+    guid: 677a0c0d54f09e844a2812989c12b86d
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B6.unity
+    guid: 1b3fb7182adeb254794d74e0f1861809
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B7.unity
+    guid: 3ffdecb43703df64083cd45ebe5e22aa
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsB/B8.unity
+    guid: 4c218a06b18d416428afeeb676d6b6e3
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C1.unity
+    guid: 846647626643b7947b5220742f76c0bb
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C2.unity
+    guid: 68c526b8258b8c44087c36099dcd9eae
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C3.unity
+    guid: 03eeeefc904bf06468df3af054967821
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C4.unity
+    guid: 8ebbd4385440ce24ab2de82e68d399cf
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C5.unity
+    guid: bc87de56a65a4e34b90b2a9be313d09a
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C6.unity
+    guid: fe4476b74fc923141a52a892e4b84c79
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C7.unity
+    guid: c10f53c73ec117f478952278703b6cb5
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsC/C8.unity
+    guid: 0ac9204dfe79e8043b0d81ca0fef2d06
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D1.unity
+    guid: a2384561eda4a1e4a9d4e4dcf351b156
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D2.unity
+    guid: ccbfc27632f0a4142973d186fc3b0a41
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D3.unity
+    guid: 36c91126b7f7f7d44a90bda40f636f60
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D4.unity
+    guid: 34f6165454c0830429a459cb3ff027f3
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D5.unity
+    guid: 30a16b1ae95af20418de5ef686024421
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D6.unity
+    guid: bcf8109bdd002674093121b765759ee9
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D7.unity
+    guid: 1abaa530688e7c649905aa51a844777d
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsD/D8.unity
+    guid: 03fb49601af308c41bde9c55a5518038
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E1.unity
+    guid: a13aa64fa067d1045bd7cf054609351f
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E2.unity
+    guid: 9d618d5dff6840e4098182aa19320494
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E3.unity
+    guid: 0928a1378b6689e4eb68b7745663f068
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E4.unity
+    guid: 16295a4d7f2d5f84cbf8d4848fb68a57
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E5.unity
+    guid: c4c6454b935fd814d96fad2cb8ffb4c1
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E6.unity
+    guid: 0f5cf0ec8bdefd4409add121d5bc6780
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E7.unity
+    guid: 2fc96cbe2643b6644858d1030db419a5
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsE/E8.unity
+    guid: f42debb4664c7e240a5e33564517fd0c
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F1.unity
+    guid: 3a521a602bf165d48b0b11a76b9612d4
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F2.unity
+    guid: 9202c788586362941bd32c97a69cfc8f
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F3.unity
+    guid: d101cdc3604556b4f9be79262b5a9301
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F4.unity
+    guid: e834a2c3bf116ca4498826b527da99d0
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F5.unity
+    guid: af330a45dd758ea4dbdb3416d6575c16
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F6.unity
+    guid: 11b147b5d5a248d408274b4566489575
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F7.unity
+    guid: b1f99002d5cfa004498477ef1a1f266a
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsF/F8.unity
+    guid: b961a79af90d92246b48f27e6954e997
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G2.unity
+    guid: 120eb880fbc106643aa93d8378806c39
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G3.unity
+    guid: 184b91629ae97be448f8c5d001b8d331
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G4.unity
+    guid: 8ef9cd432aeffbf4eabc1993acdb936f
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G5.unity
+    guid: 6529c615777d6494ba13f688453bfae6
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G6.unity
+    guid: 79c2dc8ee96eee34cb84bb1c36731bf8
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G7.unity
+    guid: 2d0aa829dc4cd734ba67232eb0b8d8dd
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G8.unity
+    guid: a95599fc5cdb3c94387706da75ba4949
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsG/G1.unity
+    guid: 61c7b2ed353a84549807e5b54f841da3
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H1.unity
+    guid: d577082a8f3f2ee4785dca87ac4e1dc8
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H2.unity
+    guid: 6c1207a474a88304382f428b4549aa13
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H3.unity
+    guid: 6e84ffb49db33444eaec78ed27651399
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H4.unity
+    guid: 826c44bf52223a344a67849c7d0ed0bb
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H5.unity
+    guid: 5943cb6f39aeaec4787528eac617ab24
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H6.unity
+    guid: 383777362a443994aa5c6aeeb5c2ff0e
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H7.unity
+    guid: f492e7cd83e862846a2e432d169888be
+  - enabled: 1
+    path: Assets/Scenes/Dioramas/DiagramsH/H8.unity
+    guid: 6f0a202d0d86bc94eb61710642852cd1
   m_configObjects: {}

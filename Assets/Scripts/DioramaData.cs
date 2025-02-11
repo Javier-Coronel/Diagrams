@@ -6,13 +6,21 @@ using UnityEngine;
 [ExecuteAlways]
 public class DioramaData : MonoBehaviour
 {
+    public static DioramaData Instance;
     public string dioram="";
     public bool updateToSceneName=true;
     void Awake()
     {
-        if(!Application.isPlaying&&updateToSceneName){
-            dioram=gameObject.scene.name;
-            GameObject.FindObjectsOfType<TMP_Text>()[0].text=dioram;
+        if(Application.isPlaying)
+        {
+            Instance = this;
         }
+    }
+    void Start()
+    {
+        dioram = gameObject.scene.name;
+# if UNITY_EDITOR
+        FindObjectsOfType<TMP_Text>()[0].text = dioram;
+#endif
     }
 }

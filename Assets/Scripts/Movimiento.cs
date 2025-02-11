@@ -10,12 +10,12 @@ public class Movimiento : MonoBehaviour
     private float velocidad = 1;
     private Vector3 antitrigger;
     private RaycastHit2D rayo;
-    void Start()
+    /*void Start()
     {
         targetPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         Physics.gravity = new Vector3(0, 0, 0);
-    }
-    void Update()
+    }*/
+    /*void Update()
     {
         posicionRaton = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (transform.position != targetPosition)
@@ -29,8 +29,8 @@ public class Movimiento : MonoBehaviour
             }
             
 
-            //gameObject.GetComponent<Rigidbody>().AddForce( /*Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5 * velocidad)*/);
-        }
+            //gameObject.GetComponent<Rigidbody>().AddForce( /*Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5 * velocidad)*///);
+        /*}
         else
         {
             velocidad = 1;
@@ -48,7 +48,7 @@ public class Movimiento : MonoBehaviour
         gameObject.transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5 * velocidad);
         a();
         //gameObject.GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5 * velocidad);
-    }
+    }*/
     /*private void FixedUpdate() {
         /*gameObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().position + Vector3.MoveTowards(transform.position, targetPosition, Time.fixedDeltaTime * 5 * velocidad);
     }*/
@@ -93,14 +93,6 @@ public class Movimiento : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other) {
-        
-        if(other.gameObject.CompareTag("Minigame")){
-            Debug.Log("jueguito");
-
-        }else if (other.gameObject.CompareTag("Place")){
-            Debug.Log("lugar");
-
-        }
         other.gameObject.GetComponent<TriggerEvents>().changeScene(this.gameObject);
     }
     private void a() {
