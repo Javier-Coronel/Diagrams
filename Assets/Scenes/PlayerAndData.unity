@@ -242,10 +242,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ciclo: 1
-  timeToNextCicle: 11.48
+  timeToNextCicle: 10
   internalZoneCicleRotation: 2
   midleZoneCicleRotation: 4
-  externalZoneCicleRotation: 1
+  externalZoneCicleRotation: 6
 --- !u!4 &1405717217
 Transform:
   m_ObjectHideFlags: 0
