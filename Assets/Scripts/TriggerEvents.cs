@@ -23,6 +23,10 @@ public class TriggerEvents : MonoBehaviour
             player.GetComponent<Movimiento>().setTargetPosition(placePosition.transform.position);
             SceneManager.UnloadSceneAsync(gameObject.scene);
         }
+        else
+        {
+            Debug.Log("");
+        }
     }
     void FindPosition()
     {

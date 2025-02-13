@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class GameDataModification : MonoBehaviour
 {
+    /// <summary>
+    /// TODO : Hacer otra version de este sistema que en vez de funcionar asi funcione de la siguiente forma:
+    /// Hacer 4 diccionarios, uno para cada circulo (externo, intermedio, interior, sol)
+    /// Cada diccionario sera de clave int valor string.
+    /// Cuando se mueve a otro diorama, se tiene que cambiar al diorama que este en la clave que 
+    /// </summary>
+
+
     public static GameDataModification Instance;
+    /// <summary>
+    /// Todos los dioramas representados en texto.
+    /// </summary>
     public string[,] dioaramas = new string[8, 8]
     {
         {"A1","B1","C1","D1","E1","F1","G1","H1"},
@@ -21,13 +32,32 @@ public class GameDataModification : MonoBehaviour
     private float timerToCicle = 0;
     public int internalZoneCicleRotation = 2, midleZoneCicleRotation = 4, externalZoneCicleRotation = 6;
     //Hay que cambiar esto a algo mas legible
+    /// <summary>
+    /// Este array representa una direccion de uno de los anillos, 
+    /// </summary>
     private int[] 
-    internalZonePositionsX={2,2,2,2,3,4,5,5,5,5,4,3},
-    internalZonePositionsY={2,3,4,5,5,5,5,4,3,2,2,2},
-    midleZonePositionsX={1,1,1,1,1,1,2,3,4,5,6,6,6,6,6,6,5,4,3,2},
-    midleZonePositionsY={1,2,3,4,5,6,6,6,6,6,6,5,4,3,2,1,1,1,1,1},
-    externalZonePositionsX={0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1},
-    externalZonePositionsY={0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1,0,0,0,0,0,0,0};
+    internalZonePositionsX = {2,2,2,2,3,4,5,5,5,5,4,3},
+    internalZonePositionsY = {2,3,4,5,5,5,5,4,3,2,2,2},
+    midleZonePositionsX    = {1,1,1,1,1,1,2,3,4,5,6,6,6,6,6,6,5,4,3,2},
+    midleZonePositionsY    = {1,2,3,4,5,6,6,6,6,6,6,5,4,3,2,1,1,1,1,1},
+    externalZonePositionsX = {0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1},
+    externalZonePositionsY = {0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1,0,0,0,0,0,0,0};
+    private Vector2Int[] transformToVector2Int(int[] x, int[] y)
+    {
+        Vector2Int[] a =new Vector2Int[Mathf.Min(x.Length,y.Length)];
+        for(int i = 0; i < a.Length; i++)
+        {
+            a[i] = new Vector2Int(x[i],y[i]);
+        }
+        return a;
+    }
+    /// <summary>
+    /// Initialized on Start
+    /// </summary>
+    private Vector2Int[]
+        internalZonePositions = { },
+        midleZonePositions = { },
+        externalZonePositions = { };
 
     private void Awake()
     {
@@ -42,7 +72,9 @@ public class GameDataModification : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        internalZonePositions = transformToVector2Int(internalZonePositionsX, internalZonePositionsY);
+        midleZonePositions    = transformToVector2Int(midleZonePositionsX, midleZonePositionsY);
+        externalZonePositions = transformToVector2Int(externalZonePositionsX, externalZonePositionsY);
     }
 
     // Update is called once per frame
