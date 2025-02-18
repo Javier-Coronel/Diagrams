@@ -38,8 +38,10 @@ public class GameDataModification : MonoBehaviour
     private int[] 
     internalZonePositionsX = {2,2,2,2,3,4,5,5,5,5,4,3},
     internalZonePositionsY = {2,3,4,5,5,5,5,4,3,2,2,2},
+
     midleZonePositionsX    = {1,1,1,1,1,1,2,3,4,5,6,6,6,6,6,6,5,4,3,2},
     midleZonePositionsY    = {1,2,3,4,5,6,6,6,6,6,6,5,4,3,2,1,1,1,1,1},
+    
     externalZonePositionsX = {0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1},
     externalZonePositionsY = {0,1,2,3,4,5,6,7,7,7,7,7,7,7,7,6,5,4,3,2,1,0,0,0,0,0,0,0};
     private Vector2Int[] transformToVector2Int(int[] x, int[] y)
