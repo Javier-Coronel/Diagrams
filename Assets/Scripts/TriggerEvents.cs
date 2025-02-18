@@ -42,6 +42,7 @@ public class TriggerEvents : MonoBehaviour
                         scene = GameDataModification.Instance.dioaramas[i + xMod, j + yMod];
                     }
                     else scene = "";
+                    return;
                 }
             }
         }
