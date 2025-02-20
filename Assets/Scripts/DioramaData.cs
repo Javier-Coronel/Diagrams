@@ -18,9 +18,9 @@ public class DioramaData : MonoBehaviour
     }
     void Start()
     {
-        dioram = gameObject.scene.name;
-# if UNITY_EDITOR
+        dioram = gameObject.name;
+//# if UNITY_EDITOR
         FindObjectsOfType<TMP_Text>()[0].text = dioram;
-#endif
+//#endif
     }
 }

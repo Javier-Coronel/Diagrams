@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TriggerEvents : MonoBehaviour
 {
-    public string scene;
+    public GameObject dioramToEnable;
+    public GameObject actualDioram;
     public GameObject placePosition;
     public bool esParaLatitud = true;
     public bool positiveDirection = true;
+    private void Awake()
+    {
+        actualDioram= FindObjectsOfType<DioramaData>()[0].gameObject;
+    }
     private void FixedUpdate()
     {
         FindPosition();
@@ -17,14 +23,18 @@ public class TriggerEvents : MonoBehaviour
     Metodo que cambia la escena, si la escena es un sitio situara al jugador en una posicion especificada con un GameObject.
     */
     public void changeScene(GameObject player){
-        if(!string.IsNullOrEmpty(scene)){
-            SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+        if(dioramToEnable)
+        {
+            dioramToEnable.SetActive(true);
             player.transform.position = placePosition.transform.position;
             player.GetComponent<Movimiento>().setTargetPosition(placePosition.transform.position);
             SceneManager.UnloadSceneAsync(gameObject.scene);
+            actualDioram.SetActive(false);
+            actualDioram = dioramToEnable;
         }
         else
         {
+
             Debug.Log("");
         }
     }
@@ -39,9 +49,13 @@ public class TriggerEvents : MonoBehaviour
                     Debug.Log(transform.name+" "+xMod+" "+yMod);
                     if (0 <= i + xMod && 0 <= j + yMod && GameDataModification.Instance.dioaramas.GetLength(0) > i + xMod && GameDataModification.Instance.dioaramas.GetLength(1) > j + yMod)
                     {
-                        scene = GameDataModification.Instance.dioaramas[i + xMod, j + yMod];
+                        GetComponent<Collider>().isTrigger = true;
+                        dioramToEnable = GameDataModification.Instance.dioaramas[i + xMod, j + yMod];
                     }
-                    else scene = "";
+                    else {
+                        dioramToEnable = null;
+                        GetComponent<Collider>().isTrigger = false;
+                    }
                     return;
                 }
             }
