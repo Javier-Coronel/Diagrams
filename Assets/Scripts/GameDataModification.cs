@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class GameDataModification : MonoBehaviour
 {
-    /// <summary>
-    /// TODO : Hacer otra version de este sistema que en vez de funcionar asi funcione de la siguiente forma:
-    /// Hacer 4 diccionarios, uno para cada circulo (externo, intermedio, interior, sol)
-    /// Cada diccionario sera de clave int valor string.
-    /// Cuando se mueve a otro diorama, se tiene que cambiar al diorama que este en la clave que 
-    /// </summary>
-
+    // TODO : Hacer otra version de este sistema que en vez de funcionar asi funcione de la siguiente forma:
+    // Hacer 4 diccionarios, uno para cada circulo (externo, intermedio, interior, sol)
+    // Cada diccionario sera de clave int valor string.
+    // Cuando se mueve a otro diorama, se tiene que cambiar al diorama que este en la clave que 
 
     public static GameDataModification Instance;
     /// <summary>
@@ -61,10 +58,6 @@ public class GameDataModification : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        for (int i = 0; i < dioramasOnList.Count; i++)
-        {
-            dioaramas[i / dioaramas.Length, i % dioaramas.Length] = dioramasOnList[i];
-        }
     }
     // Start is called before the first frame update
     void Start()
@@ -72,6 +65,11 @@ public class GameDataModification : MonoBehaviour
         internalZonePositions = transformToVector2Int(internalZonePositionsX, internalZonePositionsY);
         midleZonePositions    = transformToVector2Int(midleZonePositionsX, midleZonePositionsY);
         externalZonePositions = transformToVector2Int(externalZonePositionsX, externalZonePositionsY);
+        for (int i = 0; i < dioramasOnList.Count; i++)
+        {
+            dioaramas[i / dioaramas.GetLength(0), i % dioaramas.GetLength(1)] = dioramasOnList[i];
+        }
+        DebugDioramas();
     }
 
     // Update is called once per frame
