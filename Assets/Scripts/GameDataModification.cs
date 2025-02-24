@@ -14,6 +14,7 @@ public class GameDataModification : MonoBehaviour
     /// Todos los dioramas representados en texto.
     /// </summary>
     public GameObject[,] dioaramas = new GameObject[8, 8];
+    public GameObject actualDioram;
     public List<GameObject> dioramasOnList;
     public int ciclo = 1;
     public float timeToNextCicle = 30;
@@ -70,6 +71,7 @@ public class GameDataModification : MonoBehaviour
             dioaramas[i / dioaramas.GetLength(0), i % dioaramas.GetLength(1)] = dioramasOnList[i];
         }
         DebugDioramas();
+        actualDioram= FindObjectsOfType<DioramaData>(false)[0].gameObject;
     }
 
     // Update is called once per frame
@@ -121,6 +123,9 @@ public class GameDataModification : MonoBehaviour
         }
         DebugDioramas();
     }
+    /// <summary>
+    /// Imprime el array bidimensional donde estan todos los dioramas.
+    /// </summary>
     void DebugDioramas()
     {
         string a = "";
@@ -132,5 +137,25 @@ public class GameDataModification : MonoBehaviour
             a += "\n";
         }
         Debug.Log(a.ToString());
+    }
+    /// <summary>
+    /// Busca un diorama en el array de dioramas y devuelve su position (empezando por 0).
+    /// </summary>
+    /// <param name="dioram">El diorama a buscar</param>
+    /// <returns>La posicion del diorama, si no lo encuentra devuelve la posicion x -1 y -1</returns>
+    public Vector2Int FindPositionOfDioram(GameObject dioram){
+        for (int i = 0; i < dioaramas.GetLength(0); i++){
+            for (int j = 0; j < dioaramas.GetLength(1); j++)
+            {
+                if (dioaramas[i, j].name.Equals(dioram.name))
+                {
+                    return new Vector2Int(i,j);
+                }
+            }
+        }
+        return Vector2Int.one*-1;
+    }
+    public Vector2Int FindPositionOfActualDioram(){
+        return FindPositionOfDioram(actualDioram);
     }
 }
