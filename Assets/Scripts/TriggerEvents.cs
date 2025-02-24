@@ -13,6 +13,10 @@ public class TriggerEvents : MonoBehaviour
     {
         FindPosition();
     }
+    /// <summary>
+    /// Cambia el diorama actual al diorama que se ha detectado para esta posicion.
+    /// </summary>
+    /// <param name="player"></param>
     public void changeDioram(GameObject player){
         if(dioramToEnable)
         {
@@ -23,9 +27,13 @@ public class TriggerEvents : MonoBehaviour
         }
         else
         {
-            Debug.Log("");
+            Debug.LogWarning("ERROR: Deberia de haber un diorama al que ir");
         }
     }
+    /// <summary>
+    /// Busca el diorama que al que tendria que ir si se entra en este trigger, 
+    /// si no se encuentra se desactiva el trigger.
+    /// </summary>
     void FindPosition()
     {
         Vector2Int actualPos = GameDataModification.Instance.FindPositionOfActualDioram();

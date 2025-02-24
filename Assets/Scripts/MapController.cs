@@ -21,10 +21,13 @@ public class MapController : MonoBehaviour
         Vector2Int playerPos=GameDataModification.Instance.FindPositionOfActualDioram();
         for(int i = 0;i<map.width;i++){
             for(int j = 0;j<map.width;j++){
-                map.SetPixel(i,j,Color.white);
-                if(i==playerPos.x&&j==playerPos.y){
-                    map.SetPixel(i,j,Color.red);
+                if (i == playerPos.x && j == playerPos.y)
+                {
+                    map.SetPixel(i, j, Color.red);
+                    continue;
                 }
+                map.SetPixel(i,j,Color.white);
+                
             }
         }
         map.Apply();

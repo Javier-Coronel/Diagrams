@@ -525,7 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157786335}
   m_Layer: 0
-  m_Name: EstePosition
+  m_Name: SurPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -991,9 +991,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 124034913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 253.5, y: 120.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375190608
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 636178423}
   - component: {fileID: 636178422}
   m_Layer: 0
-  m_Name: Este
+  m_Name: Sur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,7 +2544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 868797484}
   m_Layer: 0
-  m_Name: SurPosition
+  m_Name: OestePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2971,7 +2971,7 @@ GameObject:
   - component: {fileID: 1020399179}
   - component: {fileID: 1020399178}
   m_Layer: 0
-  m_Name: Oeste
+  m_Name: Norte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3900,7 +3900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354200823}
   m_Layer: 0
-  m_Name: NortePosition
+  m_Name: EstePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3996,7 +3996,7 @@ GameObject:
   - component: {fileID: 1398632945}
   - component: {fileID: 1398632944}
   m_Layer: 0
-  m_Name: Norte
+  m_Name: Este
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4820,7 +4820,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 28.4
+  orthographic size: 22.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4844,13 +4844,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531265705}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 22.06, z: 0}
+  m_LocalRotation: {x: 0.29069802, y: 0.35184225, z: -0.11593851, w: 0.88219047}
+  m_LocalPosition: {x: -39.75163, y: 42.5, z: -44.48091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.476, y: 43.487, z: 0}
 --- !u!1 &1539377270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6199178278954716389, guid: 0a7558dfd382cae43b0f1573802aad19, type: 3}
@@ -5064,7 +5064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1616080934}
   m_Layer: 0
-  m_Name: OestePosition
+  m_Name: NortePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5595,7 +5595,7 @@ GameObject:
   - component: {fileID: 1926112509}
   - component: {fileID: 1926112508}
   m_Layer: 0
-  m_Name: Sur
+  m_Name: Oeste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class GameDataModification : MonoBehaviour
 {
-    // TODO : Hacer otra version de este sistema que en vez de funcionar asi funcione de la siguiente forma:
-    // Hacer 4 diccionarios, uno para cada circulo (externo, intermedio, interior, sol)
-    // Cada diccionario sera de clave int valor string.
-    // Cuando se mueve a otro diorama, se tiene que cambiar al diorama que este en la clave que 
 
     public static GameDataModification Instance;
     /// <summary>
-    /// Todos los dioramas representados en texto.
+    /// Todos los dioramas representados en un array bidimensional de GameObjects.
     /// </summary>
     public GameObject[,] dioaramas = new GameObject[8, 8];
+    /// <summary>
+    /// El diorama en el que se esta.
+    /// </summary>
     public GameObject actualDioram;
+    /// <summary>
+    /// Todos los dioramas representados en una lista de GameObjects.
+    /// </summary>
     public List<GameObject> dioramasOnList;
+    /// <summary>
+    /// El ciclo en el que se esta.
+    /// </summary>
     public int ciclo = 1;
     public float timeToNextCicle = 30;
     private float timerToCicle = 0;
+    /// <summary>
+    /// La cantidad de ciclos que hacen falta para rotar en este anillo.
+    /// </summary>
     public int internalZoneCicleRotation = 2, midleZoneCicleRotation = 4, externalZoneCicleRotation = 6;
     //Hay que cambiar esto a algo mas legible
     /// <summary>
@@ -60,7 +68,7 @@ public class GameDataModification : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         internalZonePositions = transformToVector2Int(internalZonePositionsX, internalZonePositionsY);
@@ -70,11 +78,10 @@ public class GameDataModification : MonoBehaviour
         {
             dioaramas[i / dioaramas.GetLength(0), i % dioaramas.GetLength(1)] = dioramasOnList[i];
         }
+        actualDioram = FindObjectsOfType<DioramaData>(false)[0].gameObject;
         DebugDioramas();
-        actualDioram= FindObjectsOfType<DioramaData>(false)[0].gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timerToCicle += Time.deltaTime;
@@ -96,7 +103,13 @@ public class GameDataModification : MonoBehaviour
             }
         }
     }
-    
+    /// <summary>
+    /// Rota un anillo dado en una orientación dada.
+    /// </summary>
+    /// <param name="zone">El anillo en el que se va ha hacer la rotacion.</param>
+    /// <param name="orientation">La orientacion de la rotacion, 
+    /// un valor positivo representa una orientacion horaria 
+    /// y uno negativo una orientacion antihoraria.</param>
     void RotateCicle(int zone, int orientation){
         if(zone==1){
             for (int i = (orientation<0)?internalZonePositionsX.Length-1:1; (orientation<0)?(i>0):(i < internalZonePositionsX.Length); i += (orientation < 0) ? -1 : 1)
@@ -104,12 +117,10 @@ public class GameDataModification : MonoBehaviour
                 (dioaramas[internalZonePositions[i].x, internalZonePositions[i].y],dioaramas[internalZonePositions[0].x, internalZonePositions[0].y])=
                 (dioaramas[internalZonePositions[0].x, internalZonePositions[0].y],dioaramas[internalZonePositions[i].x, internalZonePositions[i].y]);
             }
-
-            
-        }else if(zone==2){
+        }
+        else if(zone==2){
             for (int i = (orientation < 0) ? midleZonePositionsX.Length-1 : 1; (orientation < 0) ? (i > 0) : (i < midleZonePositionsX.Length); i+= (orientation < 0) ? -1:1)
             {
-                //Debug.Log(dioaramas[midleZonePositionsX[i], midleZonePositionsY[i]] + " " + dioaramas[midleZonePositionsX[0], midleZonePositionsY[0]]+" "+ midleZonePositionsX[i]+" "+ midleZonePositionsY[i]);
                 (dioaramas[midleZonePositions[i].x, midleZonePositions[i].y], dioaramas[midleZonePositions[0].x, midleZonePositions[0].y]) =
                 (dioaramas[midleZonePositions[0].x, midleZonePositions[0].y], dioaramas[midleZonePositions[i].x, midleZonePositions[i].y]);
             }
@@ -124,7 +135,7 @@ public class GameDataModification : MonoBehaviour
         DebugDioramas();
     }
     /// <summary>
-    /// Imprime el array bidimensional donde estan todos los dioramas.
+    /// Imprime el array bidimensional donde estan todos los dioramas, escribe los nombres de los gameObjects.
     /// </summary>
     void DebugDioramas()
     {
@@ -137,6 +148,7 @@ public class GameDataModification : MonoBehaviour
             a += "\n";
         }
         Debug.Log(a.ToString());
+        Debug.Log(FindPositionOfActualDioram());
     }
     /// <summary>
     /// Busca un diorama en el array de dioramas y devuelve su position (empezando por 0).
@@ -155,6 +167,10 @@ public class GameDataModification : MonoBehaviour
         }
         return Vector2Int.one*-1;
     }
+    /// <summary>
+    /// Busca el diorama activo en el array y devuelve su posicion.
+    /// </summary>
+    /// <returns>La posicion del diorama, si no lo encuentra devuelve la posicion x -1 y -1</returns>
     public Vector2Int FindPositionOfActualDioram(){
         return FindPositionOfDioram(actualDioram);
     }
